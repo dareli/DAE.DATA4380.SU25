@@ -33,12 +33,14 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 
 ## **Data Visualization**
 - The Correlation heatmap below revealed very weak relationships, with a maximum correlation of about 0.04
-
+![Corr_heatmap](pngs/num_corr.png) 
 
 - Boxplots & scatterplots below comparing disease counts to features showed no clear trends (scatter was filled)
-
+![Boxplot_diseases](pngs/diseases_box.png)
+![Scatterplot_features](pngs/features_scatter.png)
 
 - Histograms of numeric features indicated no significant outliers, as confirmed by the IQR method.
+![numerical_hists](pngs/num_hists.png)
 
 ## **Problem Formulation**
 - Input: 20 numeric + 4 categorical features (after preprocessing and feature engineering)
@@ -76,6 +78,11 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
   - MAE (Mean Absolute Error): lower is better
   - RMSE (Root Mean Squared Error): lower is better
   - R²: closer to 1 is better; negative indicates worse than baseline mean prediction
+- Baseline Regressor Results Below:
+  ![base_rfr](pngs/base_regressor.png)
+- Baseline XGB Results Below:
+- Model Comparison Table Below:
+  ![model_comparison](pngs/models_plots.png)
 
 ## **Conclusions** 
 All models performed poorly, showing negative R² values for all targets. This indicates that the water quality and socioeconomic indicators in the dataset do not have predictive power for disease counts at this scale. It is likely that important factors influencing disease burden are missing, such as vaccination rates, local outbreak history, and detailed sanitation infrastructure.
@@ -90,8 +97,7 @@ All models performed poorly, showing negative R² values for all targets. This i
   - PWBD_Feasability.ipynb: Exploratory data analysis (EDA) and missing value handling.
   - df_baseline.csv: Cleaned dataset with missing values handled, ready for modeling.
   - PWBD_Prototype_ML.ipynb: Baseline modeling, hyperparameter tuning, feature engineering, and machine learning.
-
-## **Software Setup**
+- **Software Setup**
 - **Visualization:**
   - matplotlib
   - seaborn
@@ -116,24 +122,22 @@ All models performed poorly, showing negative R² values for all targets. This i
 - **Download from: Kaggle Dataset Link**
 - Features: Mix of water quality indicators, socioeconomic data, and categorical variables
 - Target variables: Diarrheal, Cholera, and Typhoid cases per 100,000 people
-- Preprocessing:
+- **Preprocessing:**
   - Checked for missing values, duplicates, and outliers
   - Encoded categorical variables and scaled numerics
   - Created new domain-informed interaction features (e.g., pollution index)
-
-## **Training**
-- Split data into training and test sets
-- Built pipelines using scikit-learn
-- Trained multiple regression models: Random Forest, Ridge, XGBoost, LightGBM, CatBoost
-- Performed hyperparameter tuning with RandomizedSearchCV (XGBoost)
-- Tried engineered features to improve results
-- Challenge: Extremely weak correlations and noisy targets led to poor model performance (negative or near-zero R²)
-
-## **Performance Evaluation**
-- Evaluated models using MAE, RMSE, and R²
-- Compared results across all models and all 3 disease targets
-- Created summary tables and visualizations for model performance
-- Found that no model significantly outperformed others due to weak data relationships
+- **Training**
+  - Split data into training and test sets
+  - Built pipelines using scikit-learn
+  - Trained multiple regression models: Random Forest, Ridge, XGBoost, LightGBM, CatBoost
+  - Performed hyperparameter tuning with RandomizedSearchCV (XGBoost)
+  - Tried engineered features to improve results
+  - Challenge: Extremely weak correlations and noisy targets led to poor model performance (negative or near-zero R²)
+- **Performance Evaluation**:
+  - Evaluated models using MAE, RMSE, and R²
+  -  Compared results across all models and all 3 disease targets
+  -  Created summary tables and visualizations for model performance
+  -  Found that no model significantly outperformed others due to weak data relationships
 
 ## **Citations**
 
