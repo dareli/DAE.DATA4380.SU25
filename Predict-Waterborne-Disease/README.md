@@ -33,11 +33,108 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 
 ## **Data Visualization**
 - The Correlation heatmap below revealed very weak relationships, with a maximum correlation of about 0.04
-![Correlation Matrix](./Documents/plots/correlation_matrix_numerical_columns.png)
+
 
 - Boxplots & scatterplots below comparing disease counts to features showed no clear trends (scatter was filled)
-![Boxplots of Disease Cases](./Documents/plots/boxplots_disease_cases.png)
-![Scatter Plots of Targets vs Features](./Documents/plots/scatter_plots_targets_vs_features.png)
+
 
 - Histograms of numeric features indicated no significant outliers, as confirmed by the IQR method.
-![Histograms of Numerical Features](./Documents/plots/histograms_numerical_features.png)
+
+## **Problem Formulation**
+- Input: 20 numeric + 4 categorical features (after preprocessing and feature engineering)
+- Output: Regression targets for three diseases
+- **Models Used:**
+  - Baseline Random Forest Regressor
+  - Random Forest
+  - XGBoost (with hyperparameter tuning)
+  - Ridge Regression
+  - LightGBM
+  - CatBoost
+-  **Loss/Scoring:**
+  - MAE
+  - RMSE
+  - R²
+
+## **Feature Engineering**
+- Created domain-motivated interactions:
+  - GDP x Healthcare Index
+  - Sanitation Gap (100% - Sanitation Coverage)
+  - CleanWater x Urbanization
+  - Infant Mortality per GDP
+- Pollution Index (sum of selected contamination metrics)
+
+## **Training**
+- **Environment:** Python, Jupyter Notebook
+- **Libraries used:** scikit-learn, xgboost, lightgbm, catboost, pandas, numpy, seaborn, matplotlib
+- **Training time:** about a few seconds per model
+- **Cross-validation:** 3-fold for tuning hyperparameters
+- No overfitting was observed, but the data showed a generally weak signal.
+- **Challenges:** Very weak correlations in data made modeling difficult, leading to consistently poor R² scores even after tuning and feature engineering.
+
+## **Performance Comparison** 
+- **Key metrics:**
+  - MAE (Mean Absolute Error): lower is better
+  - RMSE (Root Mean Squared Error): lower is better
+  - R²: closer to 1 is better; negative indicates worse than baseline mean prediction
+
+## **Conclusions** 
+All models performed poorly, showing negative R² values for all targets. This indicates that the water quality and socioeconomic indicators in the dataset do not have predictive power for disease counts at this scale. It is likely that important factors influencing disease burden are missing, such as vaccination rates, local outbreak history, and detailed sanitation infrastructure.
+
+## **Future Work**
+- Try classification by grouping case counts into low, medium, and high risk to identify broader patterns that may be easier to predict.
+- Improve the dataset by adding more detailed local water quality and health features.
+- Enhance feature engineering by testing more interactions, or reductions.
+
+## **How to Reproduce Results** 
+- **Overview of Files in Repository:**
+  - PWBD_Feasability.ipynb: Exploratory data analysis (EDA) and missing value handling.
+  - df_baseline.csv: Cleaned dataset with missing values handled, ready for modeling.
+  - PWBD_Prototype_ML.ipynb: Baseline modeling, hyperparameter tuning, feature engineering, and machine learning.
+
+## **Software Setup**
+- **Visualization:**
+  - matplotlib
+  - seaborn
+- **Data Handling & Preprocessing:**
+  - pandas
+  - numpy
+  - scipy (for stats and skewness)
+  - scikit-learn:
+    - train_test_split, Pipeline, ColumnTransformer
+    - OneHotEncoder, MinMaxScaler
+    - RandomizedSearchCV
+- **Machine Learning Models:**
+  - scikit-learn regressors:
+    - RandomForestRegressor, Ridge, MultiOutputRegressor
+  - xgboost
+  - lightgbm
+  - catboost
+  - scikit-learn metrics:
+    - mean_absolute_error, mean_squared_error, r2_score
+
+## **Data**
+- **Download from: Kaggle Dataset Link**
+- Features: Mix of water quality indicators, socioeconomic data, and categorical variables
+- Target variables: Diarrheal, Cholera, and Typhoid cases per 100,000 people
+- Preprocessing:
+  - Checked for missing values, duplicates, and outliers
+  - Encoded categorical variables and scaled numerics
+  - Created new domain-informed interaction features (e.g., pollution index)
+
+## **Training**
+- Split data into training and test sets
+- Built pipelines using scikit-learn
+- Trained multiple regression models: Random Forest, Ridge, XGBoost, LightGBM, CatBoost
+- Performed hyperparameter tuning with RandomizedSearchCV (XGBoost)
+- Tried engineered features to improve results
+- Challenge: Extremely weak correlations and noisy targets led to poor model performance (negative or near-zero R²)
+
+## **Performance Evaluation**
+- Evaluated models using MAE, RMSE, and R²
+- Compared results across all models and all 3 disease targets
+- Created summary tables and visualizations for model performance
+- Found that no model significantly outperformed others due to weak data relationships
+
+## **Citations**
+
+
