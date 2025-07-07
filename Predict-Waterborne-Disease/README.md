@@ -36,11 +36,11 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 ![Corr_heatmap](pngs/num_corr.png) 
 
 - Boxplots & scatterplots below comparing disease counts to features showed no clear trends (scatter was filled)
-![Boxplot_diseases](pngs/diseases_box.png)
+![Boxplot_diseases](pngs/cases_box.png)
 ![Scatterplot_features](pngs/features_scatter.png)
 
 - Histograms of numeric features indicated no significant outliers, as confirmed by the IQR method.
-![numerical_hists](pngs/num_hists.png)
+![numerical_hists](pngs/num_hist.png)
 
 ## **Problem Formulation**
 - Input: 20 numeric + 4 categorical features (after preprocessing and feature engineering)
@@ -78,11 +78,9 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
   - MAE (Mean Absolute Error): lower is better
   - RMSE (Root Mean Squared Error): lower is better
   - R²: closer to 1 is better; negative indicates worse than baseline mean prediction
-- Baseline Regressor Results Below:
-  ![base_rfr](pngs/base_regressor.png)
-- Baseline XGB Results Below:
 - Model Comparison Table Below:
-  ![model_comparison](pngs/models_plots.png)
+  ![model_comparison](pngs/ml_models.png)
+  ![model_comparison](pngs/comaprisons_table.png)
 
 ## **Conclusions** 
 All models performed poorly, showing negative R² values for all targets. This indicates that the water quality and socioeconomic indicators in the dataset do not have predictive power for disease counts at this scale. It is likely that important factors influencing disease burden are missing, such as vaccination rates, local outbreak history, and detailed sanitation infrastructure.
