@@ -80,7 +80,7 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
   - R²: closer to 1 is better; negative indicates worse than baseline mean prediction
 - Model Comparison Table Below:
   ![model_comparison](pngs/ml_models.png)
-  ![model_comparison](pngs/comaprisons_table.png)
+  ![model_comparison](pngs/comparisons_table.png)
 
 ## **Conclusions** 
 All models performed poorly, showing negative R² values for all targets. This indicates that the water quality and socioeconomic indicators in the dataset do not have predictive power for disease counts at this scale. It is likely that important factors influencing disease burden are missing, such as vaccination rates, local outbreak history, and detailed sanitation infrastructure.
