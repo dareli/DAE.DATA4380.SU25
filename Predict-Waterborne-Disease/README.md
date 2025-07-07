@@ -40,7 +40,7 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 ![Scatterplot_features](pngs/features_scatter.png)
 
 - Histograms of numeric features indicated no significant outliers, as confirmed by the IQR method.
-![numerical_hists](pngs/num_hist.png)
+![numerical_hists](pngs/nums_hist.png)
 
 ## **Problem Formulation**
 - Input: 20 numeric + 4 categorical features (after preprocessing and feature engineering)
