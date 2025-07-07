@@ -5,7 +5,7 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 
 ## **Overview** 
 - **Project Goal:** The goal is to predict the number of waterborne disease cases (diarrhea, cholera, and typhoid) per 100,000 people at the national level, using 24 features that include water quality measurements and socioeconomic indicators from various countries and regions.
-- **Approach:** The problem set up as a supervised regression task and used tabular machine learning methods like Random Forest, XGBoost, Ridge, CatBoost, and LightGBM. We performed preprocessing, feature engineering, and compared models to assess their predictive power on the dataset.
+- **Approach:** The problem set up as a supervised regression task and used tabular machine learning methods like Random Forest, XGBoost, Ridge, CatBoost, and LightGBM. Preprocessing was performed as well as feature engineering, and compared models to assess their predictive power on the dataset.
 - **Brief Summary of the Performance:** All models consistently produced negative R² scores, which means they had very weak predictive power. The best model (Ridge) had an MAE of about 128 for diarrheal cases per 100,000 people, indicating that the dataset as it is now doesn't allow for reliable predictions.
 
 ## **Summary of Work Done**
@@ -138,5 +138,6 @@ All models performed poorly, showing negative R² values for all targets. This i
   -  Found that no model significantly outperformed others due to weak data relationships
 
 ## **Citations**
-
+- Kaggle Dataset: Water Pollution and Disease
+- CatBoost Documentation & Guide: GeeksforGeeks – CatBoost
 
