@@ -138,6 +138,6 @@ All models performed poorly, showing negative R² values for all targets. This i
   -  Found that no model significantly outperformed others due to weak data relationships
 
 ## **Citations**
-- Kaggle Dataset: Water Pollution and Disease
-- CatBoost Documentation & Guide: GeeksforGeeks – CatBoost
+- Kaggle Dataset: Water Pollution and Disease, https://www.kaggle.com/datasets/khushikyad001/water-pollution-and-disease/code
+- CatBoost Documentation & Guide: GeeksforGeeks – CatBoost, https://www.geeksforgeeks.org/machine-learning/introduction-to-catboost/
 
