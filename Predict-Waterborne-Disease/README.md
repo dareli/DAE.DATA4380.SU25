@@ -33,14 +33,14 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 
 ## **Data Visualization**
 - The Correlation heatmap below revealed very weak relationships, with a maximum correlation of about 0.04
-![Corr_heatmap](num_corr.png) 
+![Corr_heatmap](pngs/num_corr.png) 
 
 - Boxplots & scatterplots below comparing disease counts to features showed no clear trends (scatter was filled)
-![Boxplot_diseases](diseases_box.png)
-![Scatterplot_features](features_scatter.png)
+![Boxplot_diseases](pngs/diseases_box.png)
+![Scatterplot_features](pngs/features_scatter.png)
 
 - Histograms of numeric features indicated no significant outliers, as confirmed by the IQR method.
-![numerical_hists](num_hists.png)
+![numerical_hists](pngs/num_hists.png)
 
 ## **Problem Formulation**
 - Input: 20 numeric + 4 categorical features (after preprocessing and feature engineering)
