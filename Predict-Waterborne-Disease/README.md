@@ -33,11 +33,11 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 
 ## **Data Visualization**
 - The Correlation heatmap below revealed very weak relationships, with a maximum correlation of about 0.04
-![Correlation Matrix](http://localhost:8889/edit/data4380_data/tabular/waterdisease/correlation_matrix_numerical_columns.png)
+![Correlation Matrix](correlation_matrix_numerical_columns.png)
 
 - Boxplots & scatterplots below comparing disease counts to features showed no clear trends (scatter was filled)
-![Boxplots of Disease Cases](http://localhost:8889/edit/data4380_data/tabular/waterdisease/boxplots_disease_cases.png)
-![Scatter Plots of Targets vs Features](http://localhost:8889/edit/data4380_data/tabular/waterdisease/scatter_plots_targets_vs_features.png)
+![Boxplots of Disease Cases](images/boxplots_disease_cases.png)
+![Scatter Plots of Targets vs Features](scatter_plots_targets_vs_features.png)
 
 - Histograms of numeric features indicated no significant outliers, as confirmed by the IQR method.
-![Histograms of Numerical Features](http://localhost:8889/edit/data4380_data/tabular/waterdisease/histograms_numerical_features.png)
+![Histograms of Numerical Features](histograms_numerical_features.png)
