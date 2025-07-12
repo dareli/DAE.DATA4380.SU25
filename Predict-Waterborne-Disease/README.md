@@ -5,7 +5,7 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 
 ## **Overview** 
 - **Project Goal:** The goal is to predict the number of waterborne disease cases (diarrhea, cholera, and typhoid) per 100,000 people at the national level, using 24 features that include water quality measurements and socioeconomic indicators from various countries and regions.
-- **Approach:** The problem set up as a supervised regression task and used tabular machine learning methods like Random Forest, XGBoost, Ridge, CatBoost, and LightGBM. We performed preprocessing, feature engineering, and compared models to assess their predictive power on the dataset.
+- **Approach:** The problem set up as a supervised regression task and used tabular machine learning methods like Random Forest, XGBoost, Ridge, CatBoost, and LightGBM. Preprocessing was performed as well as feature engineering, and compared models to assess their predictive power on the dataset.
 - **Brief Summary of the Performance:** All models consistently produced negative R² scores, which means they had very weak predictive power. The best model (Ridge) had an MAE of about 128 for diarrheal cases per 100,000 people, indicating that the dataset as it is now doesn't allow for reliable predictions.
 
 ## **Summary of Work Done**
@@ -36,11 +36,11 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
 ![Corr_heatmap](pngs/num_corr.png) 
 
 - Boxplots & scatterplots below comparing disease counts to features showed no clear trends (scatter was filled)
-![Boxplot_diseases](pngs/diseases_box.png)
+![Boxplot_diseases](pngs/cases_box.png)
 ![Scatterplot_features](pngs/features_scatter.png)
 
 - Histograms of numeric features indicated no significant outliers, as confirmed by the IQR method.
-![numerical_hists](pngs/num_hists.png)
+![numerical_hists](pngs/nums_hist.png)
 
 ## **Problem Formulation**
 - Input: 20 numeric + 4 categorical features (after preprocessing and feature engineering)
@@ -78,11 +78,9 @@ This repository holds an attempt to predict waterborne disease incidence (diarrh
   - MAE (Mean Absolute Error): lower is better
   - RMSE (Root Mean Squared Error): lower is better
   - R²: closer to 1 is better; negative indicates worse than baseline mean prediction
-- Baseline Regressor Results Below:
-  ![base_rfr](pngs/base_regressor.png)
-- Baseline XGB Results Below:
 - Model Comparison Table Below:
-  ![model_comparison](pngs/models_plots.png)
+  ![model_comparison](pngs/ml_models.png)
+  ![model_comparison](pngs/comparisons_table.png)
 
 ## **Conclusions** 
 All models performed poorly, showing negative R² values for all targets. This indicates that the water quality and socioeconomic indicators in the dataset do not have predictive power for disease counts at this scale. It is likely that important factors influencing disease burden are missing, such as vaccination rates, local outbreak history, and detailed sanitation infrastructure.
@@ -140,5 +138,6 @@ All models performed poorly, showing negative R² values for all targets. This i
   -  Found that no model significantly outperformed others due to weak data relationships
 
 ## **Citations**
-
+- Kaggle Dataset: Water Pollution and Disease, https://www.kaggle.com/datasets/khushikyad001/water-pollution-and-disease/code
+- CatBoost Documentation & Guide: GeeksforGeeks – CatBoost, https://www.geeksforgeeks.org/machine-learning/introduction-to-catboost/
 
