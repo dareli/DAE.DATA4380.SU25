@@ -1,6 +1,7 @@
 ![UTA-DataScience-Logo](https://github.com/dareli/DATA3402.Spring.2024/assets/123596270/0cb941d4-8a3b-4382-9dd0-22c28edbb8a5)
 
-# **DATA 4380 - Computer Vision Project: Brain Tumor Classification from MRI:** This repository contains experiments using transfer learning (ResNet50, DenseNet121, MobileNetV2, VGG19, EfficientNetB0) to classify brain tumors using MRI scans from the Kaggle Brain Tumor Dataset: https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
+# **DATA 4380 - Computer Vision Project: Brain Tumor Classification from MRI:** 
+This repository contains experiments using transfer learning (ResNet50, DenseNet121, MobileNetV2, VGG19, EfficientNetB0) to classify brain tumors using MRI scans from the Kaggle Brain Tumor Dataset: https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
 
 ## **Overview** 
 - The goal was to classify brain MRI images into four categories: glioma, meningioma, pituitary tumor, or no tumor. I used the grayscale MRI images and turned them into a multiclass image classification task using transfer learning and data augmentation to boost performance. Thebest model (DenseNet121 with augmentation) achieved a micro-averaged ROC AUC score of 0.99, with other top models (MobileNetV2 and ResNet50-Augmented) achieving 0.98 and 0.97 respectively.
