@@ -88,11 +88,63 @@ Overall, DenseNet121 stood out as the most reliable model, especially with augme
 - Balance the classes better, especially if some tumor types are underrepresented in the dataset.
 - Try grayscale-optimized layers or architectures that might work better with medical image data out of the box.
 
+## **How to Reproduce Results**
+1. Download or clone this repository
+2. Download the pre-cleaned dataset directly from this repository (tumor_data_cleaned)
+3. Run the notebooks in order:
+   - BrainTumorClass_DataLoader.ipynb
+   - Brain_Tumor_Class_TrainBaseModel.ipynb
+   - BrainTumorClass_TrainBaseModelAugmentation.ipynb
+   - Train-EfficientNetB0.ipynb, Train-DenseNet121.ipynb, TrainMobileNetV2.ipynb
+   - CompareModels.ipynb
+   
+### Overview of Files in Repository
+- BrainTumorClass_DataLoader.ipynb: Data preprocessing and cleanup
+- Brain_Tumor_Class_TrainBaseModel.ipynb: Baseline models training
+- BrainTumorClass_TrainBaseModelAugmentation.ipynb: Data augmentation and training
+- Train-DenseNet121.ipynb: DenseNet121 model training
+- TrainMobileNetV2.ipynb: MobileNetV2 training
+- MobileNetV2 training: EfficientNetB0 training
+- Train-EfficientNetB0.ipynb: EfficientNetB0 training
+- ResNet50_CompareAugmentation.ipynb: Compare ResNet50 with/without augmentation
+- CompareModels.ipynb: AUC comparison and ROC plots
+- class_indices.json: Maps class names to numeric labels
+- pngs (folder): ROC curves and training visualizations
 
+### Data
+- The dataset used in this project is the Brain Tumor Classification (MRI) Dataset available on Kaggle.(https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data)
+  - Cropped and encoded data is available in the repository under tumor_data_cleaned
 
+### Preprocessing and Organization
+- Images were resized to (224, 224) to match model input size requirements
+- Data augmentation was applied using TensorFlow’s tf.keras.Sequential API (For reference, see BrainTumorClass_DataLoader.ipynb)
 
+### Training
+#### Environment:
+- Majority of training was performed using Jupyter Notebook on a Windows machine with the following specs: AMD Ryzen 7 5700G, 32GB RAM, and a GTX 760 Ti GPU
+#### Training Frameworks:
+- Models were implemented using TensorFlow/Keras, with common tools such as NumPy, Pandas, and Matplotlib
+- All models were trained using: categorical crossentropy loss, adam optimizer, earlystopping with validation monitoring, Batch size of 32, epochs of 10
 
+### Performance Evaluation
+- Metrics Used: Validation Accuracy, ROC AUC Score, Training/Validation Curves
+- Final Model Comparison: After all models were trained, performance was evaluated on the validation set and summarized in a horizontal bar chart comparing ROC AUC scores. See CompareModels.ipynb for visualizations and metrics.
 
+## **Citations**
+[1] Nickparvar, Masoud. “Brain Tumor MRI Dataset.” Kaggle, 2023.
+https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
+
+[2] Chollet, François. “Image Classification from Scratch.” Keras Documentation.
+https://keras.io/examples/vision/image_classification_from_scratch/
+
+[3] TensorFlow. “Load images from directory.” TensorFlow Guide.
+https://www.tensorflow.org/tutorials/load_data/images
+
+[4] Nickparvar, Masoud. “Preprocessing Script for Brain Tumor Classification.” GitHub, 2023.
+https://github.com/masoudnick/Brain-Tumor-MRI-Classification/blob/main/Preprocessing.py
+
+[5] Shah, Rajan, et al. “Brain Tumor Classification Using Deep Learning and Transfer Learning.” Journal of Healthcare Engineering, 2023.
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10157370/#s3
 
 
 
