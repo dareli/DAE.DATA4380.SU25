@@ -14,7 +14,7 @@ This repository contains experiments using large language model embeddings (all-
   - Split: Used for unsupervised similarity and clustering analysis (no train/test split)
 
 ## **Preprocessing & Clean up**
-- Parsed DrugBank XML to extract 'drugbank_id`, `name`, and `description`
+- Parsed DrugBank XML to extract 'drugbank_id` , `name` , and `description`
 - Loaded and cleaned SIDER drug name and side effect files
 - Matched drugs between DrugBank and SIDER by lowercase names
 - Removed entries with missing descriptions
@@ -55,7 +55,6 @@ This repository contains experiments using large language model embeddings (all-
   - Minimum side effects for filtered set = 3
  
 ## **During Processing & Challenges**
-- All work was done in Jupyter Notebooks on a 2021 MacBook Pro (M1 Pro, 16GB RAM) using Python, pandas, NumPy, scikit-learn, and Sentence-Transformers.
 - I parsed DrugBank XML, merged it with SIDER side effect data, and generated 384-dimensional embeddings using `all-MiniLM-L6-v2`. Cosine similarity (descriptions) and Jaccard similarity (side effects) were computed for 1000 random drug pairs, followed by KMeans clustering and evaluation with metrics like Silhouette score and ARI.
 - Challenges included many drug pairs sharing no side effects (Jaccard ≈ 0). Hyperparameter tuning for clustering was minimal, focusing on qualitative inspection (PCA plots, heatmaps) and basic metrics.
 
@@ -108,7 +107,7 @@ Clustering drug description embeddings showed only weak separation (Silhouette =
 - **LLM_Fesability.ipynb** – Data loading, cleaning, and merging DrugBank & SIDER datasets, generating embeddings.  
 - **LLM_similarity_analysis.ipynb** – Similarity calculations (cosine & Jaccard), filtering, clustering, and visualizations.  
 - **LLM_evaluation.ipynb** – Evaluation metrics (silhouette, ARI, within/between cluster similarity) and additional insights.  
-- **drug_names.tsv** – DrugBank drug names extracted from XML.  
+- **drug_names.tsv** – SIDER drug names data.  
 - **meddra_all_se.tsv.gz** – Raw SIDER side effect data.  
 - **drug_descriptions_embeddings.csv** – Embeddings for each drug description.  
 - **drug_data_with_clusters.csv** – Final dataset with assigned cluster labels.  
@@ -130,7 +129,7 @@ Clustering drug description embeddings showed only weak separation (Silhouette =
 
 ## Analysis & Clustering
 ### Environment:
-- All analysis was performed in Jupyter Notebook on a Windows machine (AMD Ryzen 7 5700G, 32GB RAM) and a 2021 MacBook Pro (14-inch).
+- All work and analysis was done in Jupyter Notebook on a 2021 MacBook Pro (M1 Pro, 16GB RAM).
 ### Frameworks & Tools:
 - Python packages: `pandas`, `numpy`, `matplotlib`, `scikit-learn`, `sentence-transformers`
 - Methods: Cosine similarity, Jaccard similarity, KMeans clustering, PCA for visualization
