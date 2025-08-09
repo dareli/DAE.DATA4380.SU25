@@ -1,1 +1,4 @@
 Brain-Tumor-Classification/saved models/
+.DS_Store
+.ipynb_checkpoints/
+*.pyc
